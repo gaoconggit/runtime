@@ -328,6 +328,13 @@ Sets ciphers (< TLS 1.3) and cipher suites (TLS 1.3) on the SSL_CTX
 PALEXPORT int32_t CryptoNative_SetCiphers(SSL_CTX* ctx, const char* cipherList, const char* cipherSuites);
 
 /*
+ openssl 1.1.1 set  SSL_OP_ALL
+*/
+PALEXPORT void CryptoNative_SslCtxSetSslOpAllOption(SSL_CTX* ssl);
+
+
+
+/*
 Determines if TLS 1.3 is supported by this OpenSSL implementation
 */
 PALEXPORT int32_t CryptoNative_Tls13Supported(void);

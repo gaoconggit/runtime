@@ -101,6 +101,9 @@ internal static partial class Interop
                 // create the handle, it's rooted by the using, no one else has a reference to it, etc.
                 Ssl.SetProtocolOptions(innerContext.DangerousGetHandle(), protocols);
 
+                // supported sql server 2008
+                Ssl.SslCtxSetSslOpAllOption(innerContext);
+                
                 // Sets policy and security level
                 if (!Ssl.SetEncryptionPolicy(innerContext, policy))
                 {

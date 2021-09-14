@@ -105,10 +105,10 @@ internal static partial class Interop
                 // Configure allowed protocols. It's ok to use DangerousGetHandle here without AddRef/Release as we just
                 // create the handle, it's rooted by the using, no one else has a reference to it, etc.
                 Ssl.SetProtocolOptions(innerContext.DangerousGetHandle(), protocols);
-                 
+
                 // supported sql server 2008
                 Ssl.SslCtxSetSslOpAllOption(innerContext);
-                   
+
                 // Sets policy and security level
                 if (!Ssl.SetEncryptionPolicy(innerContext, policy))
                 {
@@ -370,7 +370,7 @@ internal static partial class Interop
 
                 if (retVal > 0)
                 {
-                        count = retVal;
+                    count = retVal;
                 }
             }
 

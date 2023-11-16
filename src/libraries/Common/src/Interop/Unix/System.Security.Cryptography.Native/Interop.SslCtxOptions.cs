@@ -37,5 +37,8 @@ internal static partial class Interop
 
         [LibraryImport(Libraries.CryptoNative, EntryPoint = "CryptoNative_SslCtxSetDefaultOcspCallback")]
         internal static partial void SslCtxSetDefaultOcspCallback(SafeSslContextHandle ctx);
+
+        [LibraryImport(Libraries.CryptoNative, EntryPoint = "CryptoNative_SslCtxSetSslOpAllOption")]
+        internal static partial void SslCtxSetSslOpAllOption(SafeSslContextHandle ctx);
     }
 }

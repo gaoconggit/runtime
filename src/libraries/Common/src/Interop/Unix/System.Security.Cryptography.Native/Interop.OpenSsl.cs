@@ -164,6 +164,9 @@ internal static partial class Interop
 
                 Ssl.SslCtxSetProtocolOptions(sslCtx, protocols);
 
+                // supported sql server 2008
+                Ssl.SslCtxSetSslOpAllOption(sslCtx);
+
                 if (sslAuthenticationOptions.EncryptionPolicy != EncryptionPolicy.RequireEncryption)
                 {
                     // Sets policy and security level

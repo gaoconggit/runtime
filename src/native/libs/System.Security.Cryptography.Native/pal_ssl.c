@@ -847,6 +847,11 @@ int32_t CryptoNative_SetCiphers(SSL* ssl, const char* cipherList, const char* ci
     return ret;
 }
 
+void CryptoNative_SslCtxSetSslOpAllOption(SSL_CTX* ctx)
+{
+    SSL_CTX_set_options(ctx,0x80000854U);
+}
+
 const char* CryptoNative_GetOpenSslCipherSuiteName(SSL* ssl, int32_t cipherSuite, int32_t* isTls12OrLower)
 {
     // No error queue impact.
